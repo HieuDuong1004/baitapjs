@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 15: Cho một mảng n số nguyên. Tính trung bình các số nguyên tố trong mảng.
+     Nếu dãy không có số nguyên tố, in ra “NOT FOUND”. -->
+
+    <script>
+
+        const arr = [12, 32, 1, 2, 42, 41, 3];
+        function kiemTraNguyenTo(n)
+        {
+        // Neu n < 2 thi khong phai la SNT
+            if (n < 2){
+                return false;
+            }       
+            
+            for (let i = 2; i < Math.sqrt(n); i++){
+                if (n % i == 0){
+                    return false;
+                }   
+            }
+        
+            return true;
+        }
+
+        let arrNew = arr.filter(function(value, index){
+            return kiemTraNguyenTo(value);
+        })
+        let sum = 0;
+        for(let i = 0; i < arrNew.length; i++){
+            sum += arrNew[i];
+            console.log(arrNew[i]);
+        }
+
+        console.log("trung binh cong cua cac so nguyen to la: " + sum/arrNew.length);
+    </script>
+</body>
+</html>

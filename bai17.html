@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 17: Cho một mảng n số nguyên.
+     Tìm và in ra số âm lớn nhất trong mảng.
+      Nếu dãy không có số phù hợp, in ra “NOT FOUND”. -->
+
+    <script>
+
+        const arr = [1 , -2, 3, -12, 34]
+
+        let newArr = arr.filter(function(value){
+            return value < 0;
+        })
+        let max = newArr[0];
+        for(let i=0;i<newArr.length;i++){
+            if(newArr[i] > max){
+                max = newArr[i];
+            }
+        }
+        console.log("so am nho nhat trong mang" +max);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            display: flex;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+            padding: 30px;
+            margin: 5px;
+            border: 1px solid;
+            border-radius: 50%;
+        }
+        .container{
+            width: 400px;
+            height: 200px;
+            margin: auto;
+        }
+        .btn{
+            width: 70%;
+            text-align: center;
+        }
+    
+       
+    
+    </style>
+</head>
+
+<body>
+    <!-- Bài 23: thết kế đồng hồ bấm giờ gồm 3 button:
+        start( bắt đầu chạy thời gian)
+        stop(dừng lại và hiển thị thời gian chạy được)
+        reset(quay trở về thời gian ban đầu)  -->
+
+      <div class="container"> 
+            <ul>
+                <li id="m">00</li>
+                <li id="s">00</li>
+                <li id="tt">00</li>
+            </ul>
+      <div class="btn">
+        <button id="start">Bat Dau</button>
+        <button id="stop">Dung</button>
+        <button id="reset">Reset</button>
+      </div>
+      </div>
+
+        <script>
+            let start = document.getElementById("start");
+            let stop = document.getElementById("stop");
+            let reset = document.getElementById("reset");
+            let mEle = document.getElementById("m");
+            let sEle = document.getElementById("s");
+            let tEle = document.getElementById("tt");
+            let m = 0;
+            let s = 0;
+            let tt = 0;
+            let interval;
+           
+           
+
+            start.addEventListener("click", function(){
+                clearInterval(interval);
+             interval = setInterval (function(){
+              
+                tt++;
+                if(tt < 9){
+                    tEle.innerHTML = `0${tt}`;
+                } else{
+                    tEle.innerHTML = tt;
+                }
+                if(tt > 99){
+                    s++;
+                    tEle.innerHTML = `00`;
+                    tt = 0;
+                }
+
+                if(s < 9){
+                    sEle.innerHTML = `0${s}`;
+                }else{
+                    sEle.innerHTML = s;
+                }
+                if(s > 99){
+                    m++;
+                    sEle.innerHTML = `00`;
+                    s = 0;
+                }
+
+                if(m < 9){
+                    mEle.innerHTML = `0${m}`;
+                }else{
+                    mEle.innerHTML = m;
+                }
+            },10)
+            })
+            
+            stop.addEventListener("click", function(){
+                clearInterval(interval);
+            })  
+            reset.addEventListener("click", function(){
+                clearInterval(interval);
+                tEle.innerHTML = "00";
+                sEle.innerHTML = "00";
+                mEle.innerHTML = "00";
+                
+            })
+        </script>
+
+
+</body>
+</html>

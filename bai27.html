@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        button{
+            width: 50px;
+            padding: 7px 10px;
+            font-size: 15px;
+        }
+        ul{
+            padding: 5px;
+        }
+        input{
+            width: 300px;
+            padding: 5px 10px;
+            margin: 5px 10px;
+        }
+        li{
+            
+            list-style: none;
+            font-size: 20px;
+        }
+        
+        i{
+            margin-left: 10px;
+        }
+        i:hover{
+            color: red;
+        }
+        .container{
+            width: 400px;
+            margin: 100px auto;
+            background: rgb(212, 202, 202);
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Bài 27: Xây dựng danh sách công việc cần làm trong ngày
+        ( yêu cầu: người dùng có thể thêm, xoá công việc) -->
+
+        <div class="container">         
+                <input type="text" placeholder="nhap cong viec">
+                <button>Add</button>
+
+            <ul class="todos">
+                <!-- <li class="test">
+                   <span>Test</span>
+                   <i class="fa fa-trash-o"></i>
+                </li> -->
+            </ul>
+        </div>
+
+
+    <script>
+        let input = document.querySelector("input");
+        let button = document.querySelector("button");
+        let todos = document.querySelector(".todos");
+       
+        button.addEventListener("click", function(){
+           
+            let li = document.createElement("li");
+            const node = document.createTextNode(input.value);
+            li.appendChild(node);
+
+            let icon = document.createElement("i");
+            icon.setAttribute("class", "fa fa-trash-o");
+            const t_icon  = document.createTextNode("");
+            icon.appendChild(t_icon)
+            
+            todos.appendChild(li);
+            li.appendChild(icon);
+            input.value = "";
+            icon.addEventListener("click", function(){
+                 this.parentElement.remove();
+            })
+        })
+
+       
+        
+
+    </script>
+</body>
+</html>

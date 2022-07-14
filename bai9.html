@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 9: Đăng nhập gồm tên đăng nhập và password, khi bấm nút đăng nhập sẽ mở sang một khác -->
+
+   <form  method="get" >
+        <label for="username">Nhap ten dang nhap </label>
+        <input type="text" id="username" >
+        <label for="password">Mat Khau</label>
+        <input type="password" id="password" >
+        <button type="button" onclick="myFunction()">Dang nhap</button>
+   </form>
+
+    <script>
+        function myFunction(){
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+        
+            if(username == "" && password == ""){
+                    alert("hay nhap du thong tin");
+                }
+            else if(username == "" ){
+                    alert("hay nhap du thong tin");
+                }
+            else if(password == "" ){
+                    alert("hay nhap du thong tin");
+                }
+            else{
+                alert("Dang nhap thanh cong ");
+                window.location = "bai5.html"; 
+            }
+        }
+
+    </script>
+</body>
+</html>

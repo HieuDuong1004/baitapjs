@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 11: Viết chương trình nhập vào 3 số a, b, c.
+        Kiểm tra xem a, b, c có phải là 3 cạnh của tam giác không?
+    Biết rằng, để ba số là cạnh của tam giác, thì tổng hai cạnh bất kỳ luôn lớn hơn cạnh còn lại.
+    Nếu là 3 cạnh của tam giác thì tính diện tích của tam giác theo công thức:
+    S = Căn bậc hai của (p(p – a)(p – b)(p – c))
+    Với p là nửa chu vi tam giác, theo công thức p = (a + b + c) / 2
+    Nếu không phải là cạnh của tam giác, in ra chữ “No” -->
+        
+    <label for="a">Nhap a</label>
+    <input type="number" id="a">
+    <label for="b">Nhap b</label>
+    <input type="number" id="b">
+    <label for="c">Nhap c</label>
+    <input type="number" id="c" >
+    <button type="button" onclick="myFunction()">KetQua</button>
+    <p id="kq"></p>
+
+    <script>
+
+    function myFunction(){
+        var a = Number(document.getElementById("a").value);
+        var b = Number(document.getElementById("b").value);
+        var c = Number(document.getElementById("c").value);
+        var  p = (a + b + c) / 2
+        if(a + b <= c || b + c <= a || a + c <= b){
+            document.getElementById("kq").innerHTML = "No"
+        }
+        else{
+            document.getElementById("kq").innerHTML = `Dien tich tam giac la: ${Math.sqrt((p*(p - a)*(p - b)*(p - c))).toFixed(3)}`
+        }
+    }
+    </script>
+</body>
+</html>

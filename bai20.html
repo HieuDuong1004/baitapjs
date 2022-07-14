@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 20:  Viết chương trình nhập vào hai số nguyên a, b và tính tổng hai số đó. -->
+
+    <label for="a">Nhap a</label>
+    <input type="number" id="a">
+    <label for="b">Nhap b</label>
+    <input type="number" id="b">
+    <button type="button" onclick="myFunction()">KetQua </button>
+    <p id="kq"></p>
+    <script>
+
+        function myFunction(){
+                var a = Number(document.getElementById("a").value);
+                var b = Number(document.getElementById("b").value);
+
+                document.getElementById("kq").innerHTML = `a+b = ${a+b}`;
+        }
+    </script>
+</body>
+</html>

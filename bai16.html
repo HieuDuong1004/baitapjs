@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 16: Cho một mảng n số nguyên.
+     Tìm và in ra các số chính phương trong mảng.
+      Nếu dãy không có số phù hợp, in ra “NOT FOUND” -->
+
+    <script>
+
+
+        const arr = [1, 4, 2 , 3, 11, 64];
+    function soChinhPhuong(n) {
+        let i = parseInt(Math.sqrt(n));
+        return (i*i == n)?true:false;
+    }
+
+    let newArr = arr.filter(function(value, index){
+        return soChinhPhuong(value);
+    })
+
+    if(newArr.length > 0){
+        console.log(newArr);
+    }
+    else{
+        console.log("NOT FOUND");
+    }
+
+      
+    </script>
+</body>
+</html>

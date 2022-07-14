@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 19: Hãy nhập vào một đoạn văn, đếm xem trong đoạn văn đó có bao nhiêu từ. -->
+    <label for="a">Nhap doan van</label>
+    <input type="text" id="a">
+    <button type="button" onclick="myFunction()">Dem tu</button>
+    <p id="kq"></p>
+    <script>
+        function myFunction(){
+            var a = document.getElementById("a").value.trim();
+            a = a.replace(/\s+/g, " ");
+            let arr = a.split(" ");
+            
+            if(a == ""){
+                alert("hay nhap doan van")
+            }
+            else
+                document.getElementById("kq").innerHTML = `so tu trong doan van la: ${arr.length}`
+        }
+    </script>
+</body>
+</html>

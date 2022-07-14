@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 25: Nhập vào một số bất kì. Tính giai thừa một số bất kỳ. -->
+    <script>
+
+        let n = 3;
+        let tich = 1;
+        if(n < 1){
+            console.log("khong nhap so am");
+        }
+        else{
+            for(let i = 1; i <= n; i++){
+                tich *= i;
+            }
+        }
+        console.log("giai thua cua " + n +" la: " + tich);
+    </script>
+</body>
+</html>

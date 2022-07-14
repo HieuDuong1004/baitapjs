@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="gio">Nhap gio</label>
+    <input type="text" id="gio">
+    <p id="giay"></p>
+
+    <script>
+        var inputElement = document.querySelector('input[type = "text"]');
+        inputElement.oninput = function(e){
+            document.getElementById("giay").innerHTML = e.target.value * 3600;
+        }
+    </script>
+</body>
+</html>

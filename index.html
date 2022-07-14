@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        li{
+            display: flex;
+            padding: 20px;
+            width: 100px;
+            text-align: center;
+        }
+        .close {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 12px 16px 12px 16px;
+        }
+
+        .close:hover {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="input" placeholder="nhap cong viec">
+    <ul id="myList">
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
+      
+    
+    <button onclick="myFunction()">Append</button>
+      
+    <script>
+      function myFunction() {
+      
+        let inEle = document.getElementById("input").value;
+        let btnClose = document.getElementById("btnClose");
+      // Create an "li" node:
+      const node = document.createElement("li");
+      const close = document.createElement("i");
+      
+      // Create a text node:
+      const textnode = document.createTextNode(inEle);
+      const textclose = document.createTextNode("");
+      close.setAttribute("class", "fa fa-trash-o");
+      
+      // Append the text node to the "li" node:
+      node.appendChild(textnode);
+      close.appendChild(textclose);
+      
+      // Append the "li" node to the list:
+      document.getElementById("todos").appendChild(node);
+      document.getElementById("todos").appendChild(close);
+//     for (let i = 0; i < close.length; i++) {
+//       close[i].onclick = function() {
+//       var div = this.parentElement;
+//       div.style.display = "none";
+//     }
+//   }
+    }
+      </script>
+    </script>
+</body>
+</html>

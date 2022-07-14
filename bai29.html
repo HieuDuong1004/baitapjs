@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 29: Nhập vào một chuỗi và một ký tự. 
+    Đếm số lần xuất hiện của ký tự đó
+    trong chuỗi đã cho và không phân biệt chữ hoa chữ thường. -->
+
+    
+    <label for="chuoi">Nhap chuoi</label>
+    <input type="text" id="chuoi">
+    <label for="kiTu">Nhap chuoi</label>
+    <input type="text" id="kiTu">
+    <button type="button" onclick="myFunction()">Ket qua</button>
+    <p id="kq"></p>
+
+    <script>
+
+        function myFunction(){
+            
+            let chuoi = document.getElementById("chuoi").value.trim();
+            let kiTu = document.getElementById("kiTu").value;
+            chuoi = chuoi.replace(/\s+/g, " ");
+            let arr = chuoi.split("");
+            let dem = 0;
+            
+            for(let i = 0; i < arr.length; i++){
+                if(arr[i] == kiTu){
+                    dem++;
+                }
+            }
+            document.getElementById("kq").innerHTML = `ki tu "${kiTu}" xuat hien ${dem} lan trong chuoi`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 30: Tự thiết kế validation cho chức năng đăng ký đăng nhập: 
+        yêu cầu check trường email theo chuẩn email,
+         check password theo yêu cầu >5 ký tự ,
+        ko đc có ký tự không cho phép như ( _ , - , / , ...)  -->
+
+    <form  >
+        <label for="mail">Nhap Email </label>
+        <input type="text" id="mail" >
+        <label for="password">Mat Khau</label>
+        <input type="password" id="password" >
+        <button type="button" onclick="myFunction()">Dang nhap</button>
+    </form>
+
+    <script>
+        var ckeck_mail = /^[\w]+@([\w]+\.)+[\w]{2,4}$/;
+        var check_pass = /^[\w]{5,30}$/;
+        function myFunction(){
+            var mail = document.getElementById("mail").value;
+            var password = document.getElementById("password").value;
+            
+            if(mail == "" && password == ""){
+                    alert("hay nhap du thong tin");
+            }
+                else if(mail == "" ){
+                        alert("hay nhap du thong tin");
+                    }
+                else if(password == "" ){
+                        alert("hay nhap du thong tin");
+                    }
+                else if (!ckeck_mail.test(mail))
+                    {
+                        alert("Hãy nhập đúng định dạng input");
+                    }
+                else if (!check_pass.test(password))
+                    {
+                        alert("Hãy nhập đúng định dạng input");
+                    }
+            else{
+                alert("Dang nhap thanh cong ");     
+            }
+        }
+
+    </script>
+</body>
+</html>

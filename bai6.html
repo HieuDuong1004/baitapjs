@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 6: Đăng kí tài khoản gồm Phone theo đúng định dạng gồm 10 số, và password -->
+    <label for="phone">Nhap so dien thoai</label>
+    <input type="text" id="phone" >
+    <label for="password">Mat Khau</label>
+    <input type="password" id="password" >
+    <button type="button" onclick="testform()">Dang ky</button>
+
+    <script>
+        var ck_sdt = /^[0][0-9]{9}$/;
+
+    function testform(){
+        var phone = document.getElementById("phone").value;
+        var password = document.getElementById("password").value;
+        
+        if(phone == "" && password == ""){
+            alert("hay nhap du thong tin");
+        }
+        else if(phone == "" ){
+            alert("hay nhap du thong tin");
+        }
+        else if(password == "" ){
+            alert("hay nhap du thong tin");
+        }
+        else if (!ck_sdt.test(phone))
+        {
+            alert("Hãy nhập đúng so dien thoai!");
+        } 
+       else{
+        alert("Dang ki thanh cong ");
+       }
+    }
+    
+    </script>
+</body>
+</html>

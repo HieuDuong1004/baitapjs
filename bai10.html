@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 10: Nhập tên và năm sinh , rồi tính tuổi của người đó. Năm sinh phải nhỏ hơn hoặc hiện tại -->
+    <label for="ten">Nhap ten </label>
+    <input type="text" id="ten" >
+    <label for="namsinh">Nhap Nam sinh</label>
+    <input type="number" id="namsinh" >
+    <button type="button" onclick="myFunction()">Dang nhap</button>
+    <p id ="kq"></p>
+    <script>
+           function myFunction(){
+            var ten = document.getElementById("ten").value;
+            var namsinh = document.getElementById("namsinh").value;
+            var d = new Date();
+            if(ten == "" && namsinh == ""){
+                    alert("hay nhap du thong tin");
+                }
+            else if(ten == "" ){
+                    alert("hay nhap du thong tin");
+                }
+            else if(namsinh == "" ){
+                    alert("hay nhap du thong tin");
+            }
+            else if(namsinh > 2022){
+                alert("hay nhap dung nam sinh");
+            }
+            else{
+                document.getElementById("kq").innerHTML = `Tuoi cua ban la: ${d.getFullYear() - namsinh}`
+           }
+        }
+        
+    </script>
+</body>
+</html>

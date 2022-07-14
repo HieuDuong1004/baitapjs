@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 28: Nhập vào một chuỗi. Đổi tất cả các chữ cái đầu câu thành hoa, 
+            các chữ khác thành chữ thường theo đúng chính tả. 
+             Chuỗi không chứa danh từ riêng, không chứa các dấu cách thừa. 
+             Các dấu câu có thể có gồm chấm (.), hỏi chấm (?), chấm than (!). -->
+
+    <label for="a">Nhap chuoi</label>
+    <input type="text" id="a">
+    <button type="button" onclick="myFunction()">Ket qua</button>
+    <p id="kq"></p>
+
+    <script>
+         function myFunction(){
+            var a = document.getElementById("a").value.trim();
+            a = a.replace(/\s+/g, " ");
+            let arr = a.toLowerCase().split(" ");
+            for(let i = 0; i < arr.length; i++){
+                arr[i] = arr[i][0].toUpperCase() + arr[i].slice(1);  
+            }
+            document.getElementById("kq").innerHTML = arr.join(" ");
+        }
+       
+    </script>
+</body>
+</html>

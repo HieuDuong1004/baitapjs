@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 22: Nhập vào một chuỗi. Kiểm tra xem chuỗi đó có chứa tất cả là số hay không. -->
+    <label for="a">Nhap chuoi</label>
+    <input type="text" id="a">
+    <button type="button" onclick="myFunction()">Ket qua</button>
+    <p id="kq"></p>
+    <script>
+
+        function myFunction(){
+            var a = document.getElementById("a").value.trim();
+            a = a.replace(/\s+/g, " ");
+            arr = a.split(" ");
+            
+            let kq = arr.every(function(value){
+                return value % 1 == 0;
+            })
+            if(a == ""){
+                alert("hay nhap chuoi");
+            }
+            else if(kq == true){
+                document.getElementById("kq").innerHTML = "chuoi toan so";
+            }
+            else
+                document.getElementById("kq").innerHTML = "chuoi ko toan so";
+        }
+    </script>
+</body>
+</html>

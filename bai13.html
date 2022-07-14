@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 13: Viết chương trình để tính cước điện thoại bàn cho một hộ gia đình với các thông số như sau:
+        – Phí thuê bao bắt buộc là 25 nghìn.
+        – 600 đồng cho mỗi gọi của 50 phút đầu tiên.
+        – 400 đồng cho mỗi phút gọi của 150 phút tiếp theo. -->
+
+        <label for="soDien">Nhap so dien</label>
+        <input type="number" id="soDien">
+        <button type="button" onclick="myFunction()">Thanh tien</button>
+        <p id="kq"></p>
+
+    <script>
+
+        function myFunction(){
+            so = document.getElementById("soDien").value * 1;
+
+            if(so >= 0 && so <= 50){
+                document.getElementById("kq").innerHTML = `So tien phai dong thang nay la: ${25000 + 600*so}` 
+            }
+            else if(so > 50){
+                document.getElementById("kq").innerHTML = `So tien phai dong thang nay la: ${25000 + 600*50 + (so - 50)*400}` 
+            }
+            else{
+                document.getElementById("kq").innerHTML = "nhap gia tri khong hop le" 
+            }
+        }
+    </script>
+</body>
+</html>
